@@ -26,6 +26,7 @@ tasks:
       Invoke-WebRequest -Uri "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2025.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage" -OutFile "C:\Program` Files`\Microsoft` VS` `Code\bootstrap\extensions\python.vsix"
       Invoke-WebRequest -Uri "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/debugpy/2025.0.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage" -OutFile "C:\Program` Files`\Microsoft` VS` `Code\bootstrap\extensions\python_debugpy.vsix"
       Invoke-WebRequest -Uri "https://christian-kohler.gallery.vsassets.io/_apis/public/gallery/publisher/christian-kohler/extension/npm-intellisense/1.4.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage" -OutFile "C:\Program` Files`\Microsoft` VS` `Code\bootstrap\extensions\npm-intellisense.vsix"
+      Invoke-WebRequest -Uri "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-bicep/0.33.93/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage" -OutFile "C:\Program` Files`\Microsoft` VS` `Code\bootstrap\extensions\bicep.vsix"
 
 - name: git-clone
   description: Clone this repository into C:\Workspaces
