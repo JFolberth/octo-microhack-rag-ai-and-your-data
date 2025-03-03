@@ -1,0 +1,34 @@
+# NOTE: As of 1/20/2025, a bug prevents the use of inbuilt tasks with the ~ syntax for building your image into an image definition. 
+# A bugfix is rolling out, and this issue will be resolved by 1/27/2024. 
+# In the mean time, you can still use these image definitions with inbuilt tasks on a pool directly without building an image.
+
+$schema: "1.0"
+name: "frontend-bicep"
+tasks:
+
+- name: ~/winget
+  parameters:
+    downloadUrl: 'https://raw.githubusercontent.com/JFolberth/ToDo_AzureDeploymentEnvironment/refs/heads/main/devbox/config.yaml'
+
+- name: choco
+  description: install latest python
+  parameters:
+    package: python
+
+- name: choco
+  description: install nodejs
+  parameters:
+    package: nodejs.install
+
+- name: ~/powershell
+  parameters:
+    command: |
+      Invoke-WebRequest -Uri "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2025.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage" -OutFile "C:\Program` Files`\Microsoft` VS` `Code\bootstrap\extensions\python.vsix"
+      Invoke-WebRequest -Uri "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/debugpy/2025.0.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage" -OutFile "C:\Program` Files`\Microsoft` VS` `Code\bootstrap\extensions\python_debugpy.vsix"
+      Invoke-WebRequest -Uri "https://christian-kohler.gallery.vsassets.io/_apis/public/gallery/publisher/christian-kohler/extension/npm-intellisense/1.4.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage" -OutFile "C:\Program` Files`\Microsoft` VS` `Code\bootstrap\extensions\npm-intellisense.vsix"
+
+- name: git-clone
+  description: Clone this repository into C:\Workspaces
+  parameters:
+    repositoryUrl:
+    directory: Z:\repos https://github.com/JFolberth/octo-microhack-rag-ai-and-your-data.git
