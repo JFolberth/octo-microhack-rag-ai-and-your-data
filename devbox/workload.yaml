@@ -32,4 +32,4 @@ tasks:
   description: Clone this repository into C:\Workspaces
   parameters:
     repositoryUrl:
-    directory: Z:\repos https://github.com/JFolberth/octo-microhack-rag-ai-and-your-data.git
+    directory: Z:\repos https://github.com/JFolberth/octo-microhack-rag-ai-and-your-data
